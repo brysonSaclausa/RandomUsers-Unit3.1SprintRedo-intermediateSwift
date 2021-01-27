@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Person {
+class RandomUser {
     let name: String
     let email: String
     let phone: String
@@ -20,5 +20,9 @@ class Person {
         self.name = name
         self.thumbnailURL = thumbnail
         self.mediumURL = medium
+    }
+    
+    convenience init(userRep: RandomUserRep) {
+        self.init(email: userRep.email, phone: userRep.phone, name: userRep.name, thumbnail: URL(string: userRep.thumbnail)!, medium: URL(string: userRep.medium)!)
     }
 }

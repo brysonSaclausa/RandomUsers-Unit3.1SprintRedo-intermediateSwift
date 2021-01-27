@@ -17,6 +17,7 @@
 		7CC8C1D125BFBF1A00BB3537 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC8C1CF25BFBF1A00BB3537 /* LaunchScreen.storyboard */; };
 		7CDE1E5D25C221DA00DAB832 /* RandomUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE1E5C25C221DA00DAB832 /* RandomUser.swift */; };
 		7CDE1E6025C2238100DAB832 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE1E5F25C2238100DAB832 /* UserRepresentation.swift */; };
+		7CDE1E6325C224D600DAB832 /* RandomUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE1E6225C224D600DAB832 /* RandomUserController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		7CC8C1D225BFBF1A00BB3537 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CDE1E5C25C221DA00DAB832 /* RandomUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUser.swift; sourceTree = "<group>"; };
 		7CDE1E5F25C2238100DAB832 /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
+		7CDE1E6225C224D600DAB832 /* RandomUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		7C8D251B25BFC0F800AE1347 /* MODEL CONTROLLER */ = {
 			isa = PBXGroup;
 			children = (
+				7CDE1E6225C224D600DAB832 /* RandomUserController.swift */,
 			);
 			path = "MODEL CONTROLLER";
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CC8C1C925BFBF1900BB3537 /* ViewController.swift in Sources */,
+				7CDE1E6325C224D600DAB832 /* RandomUserController.swift in Sources */,
 				7CDE1E6025C2238100DAB832 /* UserRepresentation.swift in Sources */,
 				7C8D252425C08EA300AE1347 /* UserCustomTableViewCell.swift in Sources */,
 				7CC8C1C525BFBF1900BB3537 /* AppDelegate.swift in Sources */,

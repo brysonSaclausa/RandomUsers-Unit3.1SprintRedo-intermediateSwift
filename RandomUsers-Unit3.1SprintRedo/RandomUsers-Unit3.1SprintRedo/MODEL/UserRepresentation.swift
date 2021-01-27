@@ -8,10 +8,10 @@
 import Foundation
 
 struct UserResults: Codable {
-    let results: [PersonRep]
+    let results: [RandomUserRep]
 }
 
-struct PersonRep: Codable {
+struct RandomUserRep: Codable {
     var phone: String
     var email: String
     
