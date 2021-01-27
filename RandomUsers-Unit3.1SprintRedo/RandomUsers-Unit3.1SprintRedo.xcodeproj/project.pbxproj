@@ -8,16 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		7C8D251E25BFC77600AE1347 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D251D25BFC77600AE1347 /* UsersTableViewController.swift */; };
+		7C8D252425C08EA300AE1347 /* UserCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D252325C08EA300AE1347 /* UserCustomTableViewCell.swift */; };
 		7CC8C1C525BFBF1900BB3537 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8C1C425BFBF1900BB3537 /* AppDelegate.swift */; };
 		7CC8C1C725BFBF1900BB3537 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8C1C625BFBF1900BB3537 /* SceneDelegate.swift */; };
 		7CC8C1C925BFBF1900BB3537 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8C1C825BFBF1900BB3537 /* ViewController.swift */; };
 		7CC8C1CC25BFBF1900BB3537 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC8C1CA25BFBF1900BB3537 /* Main.storyboard */; };
 		7CC8C1CE25BFBF1A00BB3537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CC8C1CD25BFBF1A00BB3537 /* Assets.xcassets */; };
 		7CC8C1D125BFBF1A00BB3537 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC8C1CF25BFBF1A00BB3537 /* LaunchScreen.storyboard */; };
+		7CDE1E5D25C221DA00DAB832 /* RandomUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE1E5C25C221DA00DAB832 /* RandomUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7C8D251D25BFC77600AE1347 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
+		7C8D252325C08EA300AE1347 /* UserCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomTableViewCell.swift; sourceTree = "<group>"; };
 		7CC8C1C125BFBF1900BB3537 /* RandomUsers-Unit3.1SprintRedo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RandomUsers-Unit3.1SprintRedo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC8C1C425BFBF1900BB3537 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CC8C1C625BFBF1900BB3537 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		7CC8C1CD25BFBF1A00BB3537 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CC8C1D025BFBF1A00BB3537 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CC8C1D225BFBF1A00BB3537 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CDE1E5C25C221DA00DAB832 /* RandomUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 			children = (
 				7CC8C1CA25BFBF1900BB3537 /* Main.storyboard */,
 				7CC8C1CF25BFBF1A00BB3537 /* LaunchScreen.storyboard */,
+				7C8D252325C08EA300AE1347 /* UserCustomTableViewCell.swift */,
 			);
 			path = VIEWS;
 			sourceTree = "<group>";
@@ -60,8 +65,8 @@
 		7C8D251725BFC0B400AE1347 /* VIEW CONTROLLERS */ = {
 			isa = PBXGroup;
 			children = (
-				7CC8C1C825BFBF1900BB3537 /* ViewController.swift */,
 				7C8D251D25BFC77600AE1347 /* UsersTableViewController.swift */,
+				7CC8C1C825BFBF1900BB3537 /* ViewController.swift */,
 			);
 			path = "VIEW CONTROLLERS";
 			sourceTree = "<group>";
@@ -69,6 +74,7 @@
 		7C8D251A25BFC0E000AE1347 /* MODEL */ = {
 			isa = PBXGroup;
 			children = (
+				7CDE1E5C25C221DA00DAB832 /* RandomUser.swift */,
 			);
 			path = MODEL;
 			sourceTree = "<group>";
@@ -181,9 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CC8C1C925BFBF1900BB3537 /* ViewController.swift in Sources */,
+				7C8D252425C08EA300AE1347 /* UserCustomTableViewCell.swift in Sources */,
 				7CC8C1C525BFBF1900BB3537 /* AppDelegate.swift in Sources */,
 				7C8D251E25BFC77600AE1347 /* UsersTableViewController.swift in Sources */,
 				7CC8C1C725BFBF1900BB3537 /* SceneDelegate.swift in Sources */,
+				7CDE1E5D25C221DA00DAB832 /* RandomUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
