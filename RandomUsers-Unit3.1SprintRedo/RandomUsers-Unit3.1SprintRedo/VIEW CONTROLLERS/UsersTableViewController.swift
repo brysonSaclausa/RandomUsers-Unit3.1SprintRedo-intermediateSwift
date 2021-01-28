@@ -9,35 +9,54 @@ import UIKit
 
 class UsersTableViewController: UITableViewController {
     
-    //MARK: - IBOUTLETS
+    var randomUserController: RandomUserController! = nil
+    
+    // MARK: - Lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        fetchUsers()
+     }//
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        randomUserController = RandomUserController()
         
         tableView.delegate = self
         tableView.dataSource = self
-
-    }
+        
+    }//
+    
+    // MARK: - Methods
+    
+    func fetchUsers() {
+        randomUserController.fetchUsers { (error) in
+            if let error = error {
+                print(error)
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }//
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        //
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //
-        return 3
+        return randomUserController.userArray.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
-
-        cell.backgroundColor = .lightGray
-
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCustomTableViewCell
+        
+        let user = randomUserController.userArray[indexPath.row]
+        cell.randomUser = user
+        
         return cell
     }
 

@@ -26,11 +26,18 @@ class RandomUserController {
                 let results = try JSONDecoder().decode(UserResults.self, from: data)
                 let userRepList = results.results
                 
+                for userRep in userRepList {
+                    let user = RandomUser(userRep: userRep)
+                    self.userArray.append(user)
+                    
+                }
+                completion(nil)
             } catch {
-                
+                completion(error)
             }
         }
-        
+        .resume()
     }
+    
     
 }
