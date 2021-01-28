@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C3CF5D625C259F100AAF98B /* FetchPhotoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3CF5D525C259F100AAF98B /* FetchPhotoOperation.swift */; };
+		7C3CF5DA25C25A0B00AAF98B /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3CF5D925C25A0B00AAF98B /* ConcurrentOperation.swift */; };
+		7C3CF5DD25C25A3B00AAF98B /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3CF5DC25C25A3B00AAF98B /* Cache.swift */; };
 		7C8D251E25BFC77600AE1347 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D251D25BFC77600AE1347 /* UsersTableViewController.swift */; };
 		7C8D252425C08EA300AE1347 /* UserCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D252325C08EA300AE1347 /* UserCustomTableViewCell.swift */; };
 		7CC8C1C525BFBF1900BB3537 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8C1C425BFBF1900BB3537 /* AppDelegate.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C3CF5D525C259F100AAF98B /* FetchPhotoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotoOperation.swift; sourceTree = "<group>"; };
+		7C3CF5D925C25A0B00AAF98B /* ConcurrentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
+		7C3CF5DC25C25A3B00AAF98B /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		7C8D251D25BFC77600AE1347 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		7C8D252325C08EA300AE1347 /* UserCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomTableViewCell.swift; sourceTree = "<group>"; };
 		7CC8C1C125BFBF1900BB3537 /* RandomUsers-Unit3.1SprintRedo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RandomUsers-Unit3.1SprintRedo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C3CF5D425C2599F00AAF98B /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				7C3CF5D525C259F100AAF98B /* FetchPhotoOperation.swift */,
+				7C3CF5D925C25A0B00AAF98B /* ConcurrentOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
 		7C8D251425BFC07200AE1347 /* LIFECYCLE */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +95,7 @@
 			children = (
 				7CDE1E5C25C221DA00DAB832 /* RandomUser.swift */,
 				7CDE1E5F25C2238100DAB832 /* UserRepresentation.swift */,
+				7C3CF5DC25C25A3B00AAF98B /* Cache.swift */,
 			);
 			path = MODEL;
 			sourceTree = "<group>";
@@ -111,6 +127,7 @@
 		7CC8C1C325BFBF1900BB3537 /* RandomUsers-Unit3.1SprintRedo */ = {
 			isa = PBXGroup;
 			children = (
+				7C3CF5D425C2599F00AAF98B /* Operations */,
 				7C8D251B25BFC0F800AE1347 /* MODEL CONTROLLER */,
 				7C8D251A25BFC0E000AE1347 /* MODEL */,
 				7C8D251725BFC0B400AE1347 /* VIEW CONTROLLERS */,
@@ -194,6 +211,9 @@
 			files = (
 				7CC8C1C925BFBF1900BB3537 /* ViewController.swift in Sources */,
 				7CDE1E6325C224D600DAB832 /* RandomUserController.swift in Sources */,
+				7C3CF5DA25C25A0B00AAF98B /* ConcurrentOperation.swift in Sources */,
+				7C3CF5D625C259F100AAF98B /* FetchPhotoOperation.swift in Sources */,
+				7C3CF5DD25C25A3B00AAF98B /* Cache.swift in Sources */,
 				7CDE1E6025C2238100DAB832 /* UserRepresentation.swift in Sources */,
 				7C8D252425C08EA300AE1347 /* UserCustomTableViewCell.swift in Sources */,
 				7CC8C1C525BFBF1900BB3537 /* AppDelegate.swift in Sources */,

@@ -10,6 +10,9 @@ import UIKit
 class UsersTableViewController: UITableViewController {
     
     var randomUserController: RandomUserController! = nil
+//    var randomUserController = RandomUserController()
+    private let photoFetchQueue = OperationQueue()
+    var thumbnailCache = Cache<Int, Data>()
     
     // MARK: - Lifecycle
     
@@ -39,6 +42,8 @@ class UsersTableViewController: UITableViewController {
             }
         }
     }//
+    
+    
 
     // MARK: - Table view data source
 
@@ -59,6 +64,10 @@ class UsersTableViewController: UITableViewController {
         
         return cell
     }
+    
+//    private func loadImage(for cell cell: UserCustomTableViewCell, forItemAt indexPath: IndexPath) {
+//        
+//    }
 
     /*
     // MARK: - Navigation
