@@ -10,6 +10,7 @@ import Foundation
 class RandomUserController {
     var userArray = [RandomUser]()
     let baseURL = URL(string: "https://randomuser.me/api/?results=100")!
+    var mediumImageCache = Cache<Int, Data>()
     
     func fetchUsers(completion: @escaping (Error?) -> ()) {
         URLSession.shared.dataTask(with: baseURL) {data, _, error in

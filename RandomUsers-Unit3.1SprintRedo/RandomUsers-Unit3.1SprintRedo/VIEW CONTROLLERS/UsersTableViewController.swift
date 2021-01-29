@@ -10,9 +10,10 @@ import UIKit
 class UsersTableViewController: UITableViewController {
     
     var randomUserController: RandomUserController! = nil
-//    var randomUserController = RandomUserController()
+
     private let photoFetchQueue = OperationQueue()
     var thumbnailCache = Cache<Int, Data>()
+    var fetchPhotoOperations: [Int: FetchPhotoOperation] = [:]
     
     // MARK: - Lifecycle
     
@@ -60,23 +61,56 @@ class UsersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCustomTableViewCell
         
         let user = randomUserController.userArray[indexPath.row]
-        cell.randomUser = user
+        cell.nameLabel.text =  user.name
+        
+        loadImage(forCell: cell, forItemAt: indexPath)
         
         return cell
     }
     
-//    private func loadImage(for cell cell: UserCustomTableViewCell, forItemAt indexPath: IndexPath) {
-//        
-//    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func loadImage(forCell cell: UserCustomTableViewCell, forItemAt indexPath: IndexPath) {
+        if let imageData = thumbnailCache.value(for: indexPath.row) {
+            cell.userImage.image = UIImage(data: imageData)
+        }
+        
+        let user = randomUserController.userArray[indexPath.row]
+        let fetchPhotoOperation = FetchPhotoOperation(userImageURL: "\(user.thumbnailURL)")
+        
+        let storeToCache = BlockOperation {
+            if let imageData = fetchPhotoOperation.imageData {
+                self.thumbnailCache.cache(value: imageData, for: indexPath.row)
+            }
+        }
+        
+        let cellReusedCheck = BlockOperation {
+            if self.tableView.indexPath(for: cell) == indexPath {
+                guard let imageData = fetchPhotoOperation.imageData else { return }
+                cell.userImage.image = UIImage(data: imageData)
+            }
+        }
+        
+        storeToCache.addDependency(fetchPhotoOperation)
+        cellReusedCheck.addDependency(fetchPhotoOperation)
+        
+        photoFetchQueue.addOperations([fetchPhotoOperation, storeToCache], waitUntilFinished: false)
+        OperationQueue.main.addOperation(cellReusedCheck)
+        fetchPhotoOperations[indexPath.row] = fetchPhotoOperation
     }
-    */
+
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowUserSegue" {
+            guard let vc = segue.destination as? UserDetailViewController,
+                  let indexpath = tableView.indexPathForSelectedRow else { return }
+            let userIndex = indexpath.row
+            let user = randomUserController.userArray[userIndex]
+            vc.user = user
+            vc.userController = randomUserController
+            vc.userIndex = userIndex
+        }
+    }
+   
 
 }
